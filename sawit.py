@@ -34,7 +34,7 @@ if uploaded_file is not None:
             st.image(img_pil, caption="Gambar yang diunggah", use_column_width=True)
 
             # resize & preprocess
-            img_resized = img_pil.resize((224, 224, 3))
+            img_resized = img_pil.resize((224, 224))
             img_array = np.array(img_resized).astype("float32")    # (224,224,3)
             img_pre = preprocess_input(img_array)                  # sama seperti training
             img_batch = np.expand_dims(img_pre, axis=0)            # (1,224,224,3)

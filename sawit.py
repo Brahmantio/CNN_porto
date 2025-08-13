@@ -35,7 +35,7 @@ if uploaded_file is not None:
 
             # resize & preprocess
             img_resized = img_pil.resize((224, 224))
-            img_array = image.img_to_array(img)
+            img_array = image.img_to_array(img_resized)
             img_array = np.expand_dims(img_array, axis=0)
             img_array = preprocess_input(img_array)
 
